@@ -1,39 +1,42 @@
 //
-//  SpeechService.swift
+//  SpeechController.swift
 //  ShareYourScore
 //
 //  Created by Mike Pattyn on 25/11/2021.
 //  Copyright © 2021 Mike Pattyn. All rights reserved.
 //
 
+import AVFoundation
 import Foundation
-import AVKit
 import Speech
 import SwiftUI
 
-class SpeechService: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
-    private var speechSynthesizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
-    private let audioEngine = AVAudioEngine()
+protocol SpeechServiceProtocol {
+    func checkPermission() -> SFSpeechRecognizerAuthorizationStatus
+    func requestAuthorization(_ completionHandler: @escaping SpeechCompletionHandler) -> Void    
+    func listen(completion: @escaping (String) -> Void) throws
+}
+
+typealias SpeechCompletionHandler = (SFSpeechRecognizerAuthorizationStatus) -> Void
+
+class SpeechService: ObservableObject, SpeechServiceProtocol {
+    @Published var detectedText: String? = nil
     private let speechRecognizer = SFSpeechRecognizer()
     private var speechRequest = SFSpeechAudioBufferRecognitionRequest()
     private var recognitionTask: SFSpeechRecognitionTask?
-    
-    @Published private(set) var speechResult: String = String.empty
-    
-    override init() {
-        super.init()
-        speechSynthesizer.delegate = self
-    }
-    
-    func speak(text: String) {
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-        speechSynthesizer.speak(utterance)
-    }
-    
-    var isAuthorized: Bool { return SFSpeechRecognizer.authorizationStatus() == .authorized }
+    private let audioEngine = AVAudioEngine()
 
-    func startRecording() throws {
+    internal func checkPermission() -> SFSpeechRecognizerAuthorizationStatus {
+        return SFSpeechRecognizer.authorizationStatus()
+    }
+    
+    func requestAuthorization(_ completionHandler: @escaping SpeechCompletionHandler) {
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            completionHandler(authStatus)
+        }
+    }
+    
+    func listen(completion: @escaping (String) -> Void) throws {
         guard let recognizer = speechRecognizer, recognizer.isAvailable else {
             //            handleError(withMessage: "Speech recognizer not available")
             return
@@ -47,7 +50,9 @@ class SpeechService: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
             print("Got a new result: \(result.bestTranscription.formattedString)")
             print(result.isFinal ? "Result is final" : "Result isn't final")
             if result.isFinal {
-                self.speechResult = result.bestTranscription.formattedString
+                DispatchQueue.main.async {
+                    completion(result.bestTranscription.formattedString)
+                }
             }
         })
         
@@ -62,13 +67,4 @@ class SpeechService: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
         
         try audioEngine.start()
     }
-    
-    func stopRecording() {
-        recognitionTask?.finish()
-        //        recognitionTask = nil
-        speechRequest.endAudio()
-        audioEngine.stop()
-        audioEngine.inputNode.removeTap(onBus: 0)
-    }
 }
-

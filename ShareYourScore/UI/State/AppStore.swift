@@ -12,11 +12,12 @@ import SwiftUI
 
 class AppStore: ObservableObject {
     @Published var currentView: AppViewType = .microphone
-    @Published var speechServiceStatus: SpeechServiceStatus = .loading
+    @Published var speechServiceStatus: SpeechServiceStatus = .unauthorized
+    @Published var spokenScore: Int? = nil
 }
 
 enum SpeechServiceStatus {
-    case loading
+    case unauthorized
     case ready
     case listening
     case error

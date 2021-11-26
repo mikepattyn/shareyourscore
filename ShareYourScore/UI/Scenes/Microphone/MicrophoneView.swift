@@ -10,7 +10,9 @@ import SwiftUI
 
 struct MicrophoneView: View {
     @EnvironmentObject var appStore: AppStore
-    @State var active: Bool = false
+    @EnvironmentObject var speechService: SpeechService
+    
+    @State var isListening: Bool = false
     
     var body: some View {
         HStack {
@@ -20,14 +22,36 @@ struct MicrophoneView: View {
                 .frame(width: 240, height: 240, alignment: .center)
                 .onTapGesture {
                     print("Microphone tapped")
-                    appStore.speechServiceStatus = .loading
-                    appStore.currentView = .score
+                    if speechService.checkPermission() != .authorized {
+                        print("Faulty permissions")
+                        return
+                    }
+                    isListening = !isListening
+                    try? speechService.listen { resultText in
+                        isListening = !isListening
+                        if let score = Int(resultText) {
+                            appStore.spokenScore = score
+                            appStore.currentView = .score
+                        }
+                    }
                 }
-                .foregroundColor(active ? .red : .white)
+                .foregroundColor(isListening ? .red : .white)
             Spacer()
         }.onAppear {
             print("Current appStore.currentView: \(appStore.currentView)")
         }
+    }
+}
+
+fileprivate func determinePermission(speechService: SpeechService) {
+    if speechService.checkPermission() != .authorized {
+        speechService.requestAuthorization { authStatus in
+            
+        }
+    }
+    
+    speechService.requestAuthorization { authStatus in
+        
     }
 }
 

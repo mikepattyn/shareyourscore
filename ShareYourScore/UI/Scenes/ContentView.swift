@@ -3,7 +3,8 @@ import AppKit
 
 struct ContentView: View {
     @State var statusText: String = "PopupScreenStatusInitial"~
-    @ObservedObject var appStore: AppStore = AppStore()
+    @EnvironmentObject var appStore: AppStore
+    @EnvironmentObject var speechService: SpeechService
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -24,6 +25,8 @@ struct ContentView: View {
             .padding(.bottom, 20)
             getViewFor($appStore.currentView.projectedValue.wrappedValue)
                 .environmentObject(appStore)
+                .environmentObject(speechService)
+            
             .padding(.bottom, 30)
             
             HStack {
