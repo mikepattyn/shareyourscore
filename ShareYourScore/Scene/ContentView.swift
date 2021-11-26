@@ -5,14 +5,14 @@ class LocalizedStrings {
     var dictionary: Dictionary<String, String> = [:]
 }
 struct ContentView: View {
-    @State var statusText: String = ""
+    @State var statusText: String = "PopupScreenStatusInitial"~
     @State var isListening: Bool = false
     @State var spokenScore: Int = -1
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text(NSLocalizedString("PopupScreenTitle", comment: ""))
+                Text("PopupScreenTitle"~)
                     .font(Font.system(size: 34.0))
                     .fontWeight(.semibold)
                     .padding(.leading, 20)
@@ -43,7 +43,7 @@ struct ContentView: View {
             .padding(.bottom, 30)
             
             HStack {
-                Text("Click the microphone and speak your score")
+                Text(statusText)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 40)
                     .fixedSize(horizontal: false, vertical: true)
@@ -58,6 +58,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(statusText: "")
+        ContentView(statusText: "PopupScreenStatusInitial"~)
     }
 }

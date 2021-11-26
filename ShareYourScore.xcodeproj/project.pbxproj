@@ -10,8 +10,8 @@
 		3239BC22274FD03A008DBAA1 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3239BC21274FD03A008DBAA1 /* SpeechService.swift */; };
 		324578A727504124008B48CF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578A627504124008B48CF /* StringExtensions.swift */; };
 		324578AB275042EC008B48CF /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578AA275042EC008B48CF /* SpeechController.swift */; };
-		324578BD27506CFC008B48CF /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 324578BF27506CFC008B48CF /* Localization.strings */; };
-		324578C227506D55008B48CF /* Localization_nl.strings in Resources */ = {isa = PBXBuildFile; fileRef = 324578C427506D55008B48CF /* Localization_nl.strings */; };
+		324578C82750F6E0008B48CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 324578CA2750F6E0008B48CF /* Localizable.strings */; };
+		324578CD2750F7AF008B48CF /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578CC2750F7AF008B48CF /* Operators.swift */; };
 		A70B6234237AF87000A2BA73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B6233237AF87000A2BA73 /* AppDelegate.swift */; };
 		A70B6236237AF87000A2BA73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B6235237AF87000A2BA73 /* ContentView.swift */; };
 		A70B6238237AF87700A2BA73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70B6237237AF87700A2BA73 /* Assets.xcassets */; };
@@ -27,8 +27,9 @@
 		324578A627504124008B48CF /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		324578AA275042EC008B48CF /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		324578B627506A49008B48CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		324578BE27506CFC008B48CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
-		324578C527506D6D008B48CF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localization_nl.strings; sourceTree = "<group>"; };
+		324578C92750F6E0008B48CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		324578CB2750F709008B48CF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		324578CC2750F7AF008B48CF /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		A70B6230237AF87000A2BA73 /* ShareYourScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareYourScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70B6233237AF87000A2BA73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A70B6235237AF87000A2BA73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				324578A627504124008B48CF /* StringExtensions.swift */,
+				324578CC2750F7AF008B48CF /* Operators.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -75,6 +77,21 @@
 				324578AA275042EC008B48CF /* SpeechController.swift */,
 			);
 			path = Speech;
+			sourceTree = "<group>";
+		};
+		324578CF2750F889008B48CF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				324578D02750F895008B48CF /* MicrophoneButton */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		324578D02750F895008B48CF /* MicrophoneButton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MicrophoneButton;
 			sourceTree = "<group>";
 		};
 		A70B6227237AF87000A2BA73 = {
@@ -97,9 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				A70B623F237AF87700A2BA73 /* Info.plist */,
+				324578CA2750F6E0008B48CF /* Localizable.strings */,
 				A70B6233237AF87000A2BA73 /* AppDelegate.swift */,
 				A70B6237237AF87700A2BA73 /* Assets.xcassets */,
-				A70B6253237B081200A2BA73 /* Views */,
+				A70B6253237B081200A2BA73 /* Scene */,
 				324578A527504115008B48CF /* Extensions */,
 				A70B6249237B000700A2BA73 /* Helpers */,
 				A70B623C237AF87700A2BA73 /* Main.storyboard */,
@@ -107,8 +125,6 @@
 				A70B6240237AF87700A2BA73 /* ShareYourScore.entitlements */,
 				324578A82750426F008B48CF /* Integrations */,
 				A70B6239237AF87700A2BA73 /* Preview Content */,
-				324578BF27506CFC008B48CF /* Localization.strings */,
-				324578C427506D55008B48CF /* Localization_nl.strings */,
 			);
 			path = ShareYourScore;
 			sourceTree = "<group>";
@@ -130,12 +146,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		A70B6253237B081200A2BA73 /* Views */ = {
+		A70B6253237B081200A2BA73 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				324578CF2750F889008B48CF /* Subviews */,
 				A70B6235237AF87000A2BA73 /* ContentView.swift */,
 			);
-			path = Views;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,9 +214,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324578C82750F6E0008B48CF /* Localizable.strings in Resources */,
 				A70B623E237AF87700A2BA73 /* Main.storyboard in Resources */,
-				324578BD27506CFC008B48CF /* Localization.strings in Resources */,
-				324578C227506D55008B48CF /* Localization_nl.strings in Resources */,
 				A70B623B237AF87700A2BA73 /* Preview Assets.xcassets in Resources */,
 				A70B6238237AF87700A2BA73 /* Assets.xcassets in Resources */,
 			);
@@ -220,26 +236,20 @@
 				324578AB275042EC008B48CF /* SpeechController.swift in Sources */,
 				A70B6250237B022700A2BA73 /* MainViewController.swift in Sources */,
 				3239BC22274FD03A008DBAA1 /* SpeechService.swift in Sources */,
+				324578CD2750F7AF008B48CF /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		324578BF27506CFC008B48CF /* Localization.strings */ = {
+		324578CA2750F6E0008B48CF /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				324578BE27506CFC008B48CF /* en */,
+				324578C92750F6E0008B48CF /* en */,
+				324578CB2750F709008B48CF /* nl */,
 			);
-			name = Localization.strings;
-			sourceTree = "<group>";
-		};
-		324578C427506D55008B48CF /* Localization_nl.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				324578C527506D6D008B48CF /* nl */,
-			);
-			name = Localization_nl.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		A70B623C237AF87700A2BA73 /* Main.storyboard */ = {
