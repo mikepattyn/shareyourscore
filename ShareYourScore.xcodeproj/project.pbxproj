@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3239BC22274FD03A008DBAA1 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3239BC21274FD03A008DBAA1 /* SpeechService.swift */; };
+		324578A727504124008B48CF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578A627504124008B48CF /* StringExtensions.swift */; };
+		324578AB275042EC008B48CF /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578AA275042EC008B48CF /* SpeechController.swift */; };
+		324578BD27506CFC008B48CF /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 324578BF27506CFC008B48CF /* Localization.strings */; };
+		324578C227506D55008B48CF /* Localization_nl.strings in Resources */ = {isa = PBXBuildFile; fileRef = 324578C427506D55008B48CF /* Localization_nl.strings */; };
 		A70B6234237AF87000A2BA73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B6233237AF87000A2BA73 /* AppDelegate.swift */; };
 		A70B6236237AF87000A2BA73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B6235237AF87000A2BA73 /* ContentView.swift */; };
 		A70B6238237AF87700A2BA73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70B6237237AF87700A2BA73 /* Assets.xcassets */; };
@@ -18,14 +23,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A70B6230237AF87000A2BA73 /* SpeakScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3239BC21274FD03A008DBAA1 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		324578A627504124008B48CF /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		324578AA275042EC008B48CF /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
+		324578B627506A49008B48CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		324578BE27506CFC008B48CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		324578C527506D6D008B48CF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localization_nl.strings; sourceTree = "<group>"; };
+		A70B6230237AF87000A2BA73 /* ShareYourScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareYourScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70B6233237AF87000A2BA73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A70B6235237AF87000A2BA73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A70B6237237AF87700A2BA73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A70B623A237AF87700A2BA73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A70B623D237AF87700A2BA73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A70B623F237AF87700A2BA73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A70B6240237AF87700A2BA73 /* SpeakScore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeakScore.entitlements; sourceTree = "<group>"; };
+		A70B6240237AF87700A2BA73 /* ShareYourScore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareYourScore.entitlements; sourceTree = "<group>"; };
 		A70B624B237B003900A2BA73 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		A70B624F237B022700A2BA73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A70B6251237B078200A2BA73 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -42,10 +52,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		324578A527504115008B48CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				324578A627504124008B48CF /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		324578A82750426F008B48CF /* Integrations */ = {
+			isa = PBXGroup;
+			children = (
+				324578A9275042C8008B48CF /* Speech */,
+			);
+			path = Integrations;
+			sourceTree = "<group>";
+		};
+		324578A9275042C8008B48CF /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				3239BC21274FD03A008DBAA1 /* SpeechService.swift */,
+				324578AA275042EC008B48CF /* SpeechController.swift */,
+			);
+			path = Speech;
+			sourceTree = "<group>";
+		};
 		A70B6227237AF87000A2BA73 = {
 			isa = PBXGroup;
 			children = (
-				A70B6232237AF87000A2BA73 /* SpeakScore */,
+				A70B6232237AF87000A2BA73 /* ShareYourScore */,
 				A70B6231237AF87000A2BA73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,25 +88,29 @@
 		A70B6231237AF87000A2BA73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A70B6230237AF87000A2BA73 /* SpeakScore.app */,
+				A70B6230237AF87000A2BA73 /* ShareYourScore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A70B6232237AF87000A2BA73 /* SpeakScore */ = {
+		A70B6232237AF87000A2BA73 /* ShareYourScore */ = {
 			isa = PBXGroup;
 			children = (
+				A70B623F237AF87700A2BA73 /* Info.plist */,
 				A70B6233237AF87000A2BA73 /* AppDelegate.swift */,
-				A70B6249237B000700A2BA73 /* Helpers */,
-				A70B6253237B081200A2BA73 /* Views */,
 				A70B6237237AF87700A2BA73 /* Assets.xcassets */,
+				A70B6253237B081200A2BA73 /* Views */,
+				324578A527504115008B48CF /* Extensions */,
+				A70B6249237B000700A2BA73 /* Helpers */,
 				A70B623C237AF87700A2BA73 /* Main.storyboard */,
 				A70B624F237B022700A2BA73 /* MainViewController.swift */,
-				A70B623F237AF87700A2BA73 /* Info.plist */,
-				A70B6240237AF87700A2BA73 /* SpeakScore.entitlements */,
+				A70B6240237AF87700A2BA73 /* ShareYourScore.entitlements */,
+				324578A82750426F008B48CF /* Integrations */,
 				A70B6239237AF87700A2BA73 /* Preview Content */,
+				324578BF27506CFC008B48CF /* Localization.strings */,
+				324578C427506D55008B48CF /* Localization_nl.strings */,
 			);
-			path = SpeakScore;
+			path = ShareYourScore;
 			sourceTree = "<group>";
 		};
 		A70B6239237AF87700A2BA73 /* Preview Content */ = {
@@ -102,9 +141,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A70B622F237AF87000A2BA73 /* SpeakScore */ = {
+		A70B622F237AF87000A2BA73 /* ShareYourScore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A70B6243237AF87700A2BA73 /* Build configuration list for PBXNativeTarget "SpeakScore" */;
+			buildConfigurationList = A70B6243237AF87700A2BA73 /* Build configuration list for PBXNativeTarget "ShareYourScore" */;
 			buildPhases = (
 				A70B622C237AF87000A2BA73 /* Sources */,
 				A70B622D237AF87000A2BA73 /* Frameworks */,
@@ -114,9 +153,9 @@
 			);
 			dependencies = (
 			);
-			name = SpeakScore;
-			productName = SpeakScore;
-			productReference = A70B6230237AF87000A2BA73 /* SpeakScore.app */;
+			name = ShareYourScore;
+			productName = ShareYourScore;
+			productReference = A70B6230237AF87000A2BA73 /* ShareYourScore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,27 +166,28 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1110;
-				ORGANIZATIONNAME = "Golden Chopper";
+				ORGANIZATIONNAME = "Mike Pattyn";
 				TargetAttributes = {
 					A70B622F237AF87000A2BA73 = {
 						CreatedOnToolsVersion = 11.1;
 					};
 				};
 			};
-			buildConfigurationList = A70B622B237AF87000A2BA73 /* Build configuration list for PBXProject "SpeakScore" */;
+			buildConfigurationList = A70B622B237AF87000A2BA73 /* Build configuration list for PBXProject "ShareYourScore" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = A70B6227237AF87000A2BA73;
 			productRefGroup = A70B6231237AF87000A2BA73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A70B622F237AF87000A2BA73 /* SpeakScore */,
+				A70B622F237AF87000A2BA73 /* ShareYourScore */,
 			);
 		};
 /* End PBXProject section */
@@ -158,6 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70B623E237AF87700A2BA73 /* Main.storyboard in Resources */,
+				324578BD27506CFC008B48CF /* Localization.strings in Resources */,
+				324578C227506D55008B48CF /* Localization_nl.strings in Resources */,
 				A70B623B237AF87700A2BA73 /* Preview Assets.xcassets in Resources */,
 				A70B6238237AF87700A2BA73 /* Assets.xcassets in Resources */,
 			);
@@ -173,18 +215,37 @@
 				A70B6236237AF87000A2BA73 /* ContentView.swift in Sources */,
 				A70B6252237B078200A2BA73 /* EventMonitor.swift in Sources */,
 				A70B624C237B003900A2BA73 /* StatusBarController.swift in Sources */,
+				324578A727504124008B48CF /* StringExtensions.swift in Sources */,
 				A70B6234237AF87000A2BA73 /* AppDelegate.swift in Sources */,
+				324578AB275042EC008B48CF /* SpeechController.swift in Sources */,
 				A70B6250237B022700A2BA73 /* MainViewController.swift in Sources */,
+				3239BC22274FD03A008DBAA1 /* SpeechService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		324578BF27506CFC008B48CF /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				324578BE27506CFC008B48CF /* en */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
+		324578C427506D55008B48CF /* Localization_nl.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				324578C527506D6D008B48CF /* nl */,
+			);
+			name = Localization_nl.strings;
+			sourceTree = "<group>";
+		};
 		A70B623C237AF87700A2BA73 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A70B623D237AF87700A2BA73 /* Base */,
+				324578B627506A49008B48CF /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -196,6 +257,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -242,12 +304,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -256,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -296,11 +360,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -309,19 +374,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SpeakScore/SpeakScore.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ShareYourScore/ShareYourScore.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"SpeakScore/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ShareYourScore/Preview Content\"";
 				DEVELOPMENT_TEAM = 74J7KLC774;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SpeakScore/Info.plist;
+				INFOPLIST_FILE = ShareYourScore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.givt.mike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -333,19 +398,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SpeakScore/SpeakScore.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ShareYourScore/ShareYourScore.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"SpeakScore/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ShareYourScore/Preview Content\"";
 				DEVELOPMENT_TEAM = 9C9K7PRW9C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SpeakScore/Info.plist;
+				INFOPLIST_FILE = ShareYourScore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.givt.mike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -356,7 +421,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A70B622B237AF87000A2BA73 /* Build configuration list for PBXProject "SpeakScore" */ = {
+		A70B622B237AF87000A2BA73 /* Build configuration list for PBXProject "ShareYourScore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A70B6241237AF87700A2BA73 /* Debug */,
@@ -365,7 +430,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A70B6243237AF87700A2BA73 /* Build configuration list for PBXNativeTarget "SpeakScore" */ = {
+		A70B6243237AF87700A2BA73 /* Build configuration list for PBXNativeTarget "ShareYourScore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A70B6244237AF87700A2BA73 /* Debug */,

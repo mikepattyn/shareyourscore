@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A70B622F237AF87000A2BA73"
-               BuildableName = "SpeakScore.app"
-               BlueprintName = "SpeakScore"
-               ReferencedContainer = "container:SpeakScore.xcodeproj">
+               BuildableName = "ShareYourScore.app"
+               BlueprintName = "ShareYourScore"
+               ReferencedContainer = "container:ShareYourScore.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A70B622F237AF87000A2BA73"
-            BuildableName = "SpeakScore.app"
-            BlueprintName = "SpeakScore"
-            ReferencedContainer = "container:SpeakScore.xcodeproj">
+            BuildableName = "ShareYourScore.app"
+            BlueprintName = "ShareYourScore"
+            ReferencedContainer = "container:ShareYourScore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A70B622F237AF87000A2BA73"
-            BuildableName = "SpeakScore.app"
-            BlueprintName = "SpeakScore"
-            ReferencedContainer = "container:SpeakScore.xcodeproj">
+            BuildableName = "ShareYourScore.app"
+            BlueprintName = "ShareYourScore"
+            ReferencedContainer = "container:ShareYourScore.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
