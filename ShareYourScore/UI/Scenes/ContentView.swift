@@ -1,13 +1,9 @@
 import SwiftUI
 import AppKit
 
-class LocalizedStrings {
-    var dictionary: Dictionary<String, String> = [:]
-}
 struct ContentView: View {
     @State var statusText: String = "PopupScreenStatusInitial"~
-    @State var isListening: Bool = false
-    @State var spokenScore: Int = -1
+    @ObservedObject var appStore: AppStore = AppStore()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -26,20 +22,8 @@ struct ContentView: View {
             }
             .padding(.top, 10)
             .padding(.bottom, 20)
-            
-            HStack {
-                Spacer()
-                Image(systemName: "mic.circle.fill")
-                    .resizable()
-                    .frame(width: 240, height: 240, alignment: .center)
-                    .onTapGesture {
-                        print("Microphone tapped")
-                        isListening = !isListening
-                        
-                    }
-                    .foregroundColor(isListening ? .red : .white)
-                Spacer()
-            }
+            getViewFor($appStore.currentView.projectedValue.wrappedValue)
+                .environmentObject(appStore)
             .padding(.bottom, 30)
             
             HStack {
@@ -55,6 +39,14 @@ struct ContentView: View {
     }
 }
 
+fileprivate func getViewFor(_ appView: AppViewType) -> AnyView {
+    switch appView {
+        case .microphone:
+            return AnyView(MicrophoneView())
+        case .score:
+            return AnyView(ScoreView())
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

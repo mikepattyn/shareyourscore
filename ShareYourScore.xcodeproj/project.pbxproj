@@ -12,6 +12,11 @@
 		324578AB275042EC008B48CF /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578AA275042EC008B48CF /* SpeechController.swift */; };
 		324578C82750F6E0008B48CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 324578CA2750F6E0008B48CF /* Localizable.strings */; };
 		324578CD2750F7AF008B48CF /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578CC2750F7AF008B48CF /* Operators.swift */; };
+		324578D62750FCF7008B48CF /* MicrophoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578D52750FCF7008B48CF /* MicrophoneView.swift */; };
+		324578D927510610008B48CF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578D827510610008B48CF /* Styles.swift */; };
+		324578DE27510743008B48CF /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578DD27510743008B48CF /* ScoreView.swift */; };
+		324578E027510C62008B48CF /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578DF27510C62008B48CF /* AppStore.swift */; };
+		324578E627510E0A008B48CF /* AppViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324578E527510E0A008B48CF /* AppViewType.swift */; };
 		A70B6234237AF87000A2BA73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B6233237AF87000A2BA73 /* AppDelegate.swift */; };
 		A70B6236237AF87000A2BA73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B6235237AF87000A2BA73 /* ContentView.swift */; };
 		A70B6238237AF87700A2BA73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70B6237237AF87700A2BA73 /* Assets.xcassets */; };
@@ -30,6 +35,11 @@
 		324578C92750F6E0008B48CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		324578CB2750F709008B48CF /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		324578CC2750F7AF008B48CF /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		324578D52750FCF7008B48CF /* MicrophoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneView.swift; sourceTree = "<group>"; };
+		324578D827510610008B48CF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		324578DD27510743008B48CF /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		324578DF27510C62008B48CF /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		324578E527510E0A008B48CF /* AppViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewType.swift; sourceTree = "<group>"; };
 		A70B6230237AF87000A2BA73 /* ShareYourScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareYourScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70B6233237AF87000A2BA73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A70B6235237AF87000A2BA73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,12 +72,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		324578A82750426F008B48CF /* Integrations */ = {
+		324578A82750426F008B48CF /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				324578A9275042C8008B48CF /* Speech */,
 			);
-			path = Integrations;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		324578A9275042C8008B48CF /* Speech */ = {
@@ -79,19 +89,76 @@
 			path = Speech;
 			sourceTree = "<group>";
 		};
-		324578CF2750F889008B48CF /* Subviews */ = {
+		324578D12750FC7E008B48CF /* Microphone */ = {
 			isa = PBXGroup;
 			children = (
-				324578D02750F895008B48CF /* MicrophoneButton */,
+				324578D52750FCF7008B48CF /* MicrophoneView.swift */,
 			);
-			path = Subviews;
+			path = Microphone;
 			sourceTree = "<group>";
 		};
-		324578D02750F895008B48CF /* MicrophoneButton */ = {
+		324578D7275105ED008B48CF /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				324578D827510610008B48CF /* Styles.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		324578DA2751070F008B48CF /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				324578D7275105ED008B48CF /* Buttons */,
+				324578DD27510743008B48CF /* ScoreView.swift */,
+			);
+			path = Score;
+			sourceTree = "<group>";
+		};
+		324578E127510D46008B48CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = MicrophoneButton;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		324578E227510D6E008B48CF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				324578E327510D7E008B48CF /* State */,
+				324578E127510D46008B48CF /* Views */,
+				A70B6253237B081200A2BA73 /* Scenes */,
+				A70B6239237AF87700A2BA73 /* Preview Content */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		324578E327510D7E008B48CF /* State */ = {
+			isa = PBXGroup;
+			children = (
+				324578DF27510C62008B48CF /* AppStore.swift */,
+				324578E527510E0A008B48CF /* AppViewType.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		324578E427510DA5008B48CF /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				324578A82750426F008B48CF /* Services */,
+				324578A527504115008B48CF /* Extensions */,
+				A70B6249237B000700A2BA73 /* Helpers */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		324578E827510F1E008B48CF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A70B623C237AF87700A2BA73 /* Main.storyboard */,
+				A70B624F237B022700A2BA73 /* MainViewController.swift */,
+				A70B6233237AF87000A2BA73 /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		A70B6227237AF87000A2BA73 = {
@@ -113,18 +180,13 @@
 		A70B6232237AF87000A2BA73 /* ShareYourScore */ = {
 			isa = PBXGroup;
 			children = (
+				324578E227510D6E008B48CF /* UI */,
+				324578E827510F1E008B48CF /* App */,
+				324578E427510DA5008B48CF /* Infrastructure */,
 				A70B623F237AF87700A2BA73 /* Info.plist */,
 				324578CA2750F6E0008B48CF /* Localizable.strings */,
-				A70B6233237AF87000A2BA73 /* AppDelegate.swift */,
-				A70B6237237AF87700A2BA73 /* Assets.xcassets */,
-				A70B6253237B081200A2BA73 /* Scene */,
-				324578A527504115008B48CF /* Extensions */,
-				A70B6249237B000700A2BA73 /* Helpers */,
-				A70B623C237AF87700A2BA73 /* Main.storyboard */,
-				A70B624F237B022700A2BA73 /* MainViewController.swift */,
 				A70B6240237AF87700A2BA73 /* ShareYourScore.entitlements */,
-				324578A82750426F008B48CF /* Integrations */,
-				A70B6239237AF87700A2BA73 /* Preview Content */,
+				A70B6237237AF87700A2BA73 /* Assets.xcassets */,
 			);
 			path = ShareYourScore;
 			sourceTree = "<group>";
@@ -146,13 +208,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		A70B6253237B081200A2BA73 /* Scene */ = {
+		A70B6253237B081200A2BA73 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				324578CF2750F889008B48CF /* Subviews */,
+				324578DA2751070F008B48CF /* Score */,
+				324578D12750FC7E008B48CF /* Microphone */,
 				A70B6235237AF87000A2BA73 /* ContentView.swift */,
 			);
-			path = Scene;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,10 +293,15 @@
 			files = (
 				A70B6236237AF87000A2BA73 /* ContentView.swift in Sources */,
 				A70B6252237B078200A2BA73 /* EventMonitor.swift in Sources */,
+				324578D62750FCF7008B48CF /* MicrophoneView.swift in Sources */,
 				A70B624C237B003900A2BA73 /* StatusBarController.swift in Sources */,
 				324578A727504124008B48CF /* StringExtensions.swift in Sources */,
+				324578DE27510743008B48CF /* ScoreView.swift in Sources */,
 				A70B6234237AF87000A2BA73 /* AppDelegate.swift in Sources */,
 				324578AB275042EC008B48CF /* SpeechController.swift in Sources */,
+				324578E627510E0A008B48CF /* AppViewType.swift in Sources */,
+				324578D927510610008B48CF /* Styles.swift in Sources */,
+				324578E027510C62008B48CF /* AppStore.swift in Sources */,
 				A70B6250237B022700A2BA73 /* MainViewController.swift in Sources */,
 				3239BC22274FD03A008DBAA1 /* SpeechService.swift in Sources */,
 				324578CD2750F7AF008B48CF /* Operators.swift in Sources */,
@@ -387,7 +455,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShareYourScore/ShareYourScore.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"ShareYourScore/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ShareYourScore/UI/Preview Content\"";
 				DEVELOPMENT_TEAM = 74J7KLC774;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -411,7 +479,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShareYourScore/ShareYourScore.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"ShareYourScore/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ShareYourScore/UI/Preview Content\"";
 				DEVELOPMENT_TEAM = 9C9K7PRW9C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
